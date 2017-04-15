@@ -13,5 +13,8 @@
   "devDependencies": {
     "mime": "^1.3.4",
     "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "ws": "^2.2.3"
   }
 }
