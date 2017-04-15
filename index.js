@@ -3,6 +3,7 @@
 var http = require('http');
 var fs = require('fs');
 var extract = require('./extract');
+var mime = require('mime');
 
 var handleError = function (err, res) {
   res.writeHead(404);
@@ -17,6 +18,7 @@ var server = http.createServer(function (req, res) {
       handleError(err, res);
       return;
     } else {
+      res.setHeader('Content-Type', mime.lookup(filePath));
       res.end(data);
     }
   });
